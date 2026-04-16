@@ -1,0 +1,12 @@
+langchain
+fastapi[standard]
+uvicorn
+dotenv
+langchain-huggingface
+langchain-core
+langchain-community
+beautifulsoup4
+pypdf
+pinecone
+langchain-pinecone
+sentence-transformers
