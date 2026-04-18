@@ -3,8 +3,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from src.vectordb.vectordb import store_in_pinecoce
 from src.utils.deletefile import delete_file
-def clean_text(text):
-    return " ".join(text.split())
+from src.utils.textCleaner import clean_text
 def load_pdf(file_path:str):
     try:
         loader = PyPDFLoader(file_path)
@@ -19,12 +18,11 @@ def load_pdf(file_path:str):
         )
         chunks = splitter.split_documents(docs)
         vectordb = store_in_pinecoce(chunks)
-        print(vectordb)
+        
        
         if vectordb["status"]==True:
             fdelete = delete_file(file_path)
-            print(fdelete)
-        
+            
       
     except Exception as e:
 
