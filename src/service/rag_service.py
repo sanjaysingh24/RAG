@@ -5,7 +5,7 @@ agent_config = AgentConfig()
 
 model = ChatHuggingFace(llm=agent_config.llm)
 def mychat(message: str, retriever) -> str:
-    # Step 1: Retrieve context
+    # Step 1: Perform the semantic search
     docs = retriever.invoke(message)
 
     context = "\n\n".join([doc.page_content for doc in docs])
