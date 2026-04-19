@@ -5,7 +5,7 @@ from fastapi import UploadFile,File,HTTPException
 from src.service.pdf_service import save_file
 from src.vectordb.vectordb import get_retriver
 
-ragrouter = APIRouter(prefix="/rag",tags=["rag"])
+ragrouter = APIRouter(prefix="/api",tags=["rag"])
 
 @ragrouter.post("/chat")
 def ask_agent(data:ChatRequest):
