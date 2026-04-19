@@ -7,4 +7,4 @@ webRouter = APIRouter(prefix="/webloader",tags=["webloader"])
 @webRouter.post("/url")
 async def webloader(data:UrlSchema):
     response = await load_url(data.url)
-    print(response)
+    return {"status": "success Full Loaded"}
