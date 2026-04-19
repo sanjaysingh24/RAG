@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from src.schema.chat_schema import UrlSchema
 from src.loaders.webloader import load_url
-webRouter = APIRouter()
+webRouter = APIRouter(prefix="/webloader",tags=["webloader"])
 
 
 @webRouter.post("/url")
